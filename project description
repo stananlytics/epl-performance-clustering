@@ -1,0 +1,31 @@
+# Premier League Team Performance Clustering & Regression Analysis
+
+## Overview
+
+This project applies unsupervised machine learning and inferential statistics to classify English Premier League (EPL) clubs into distinct performance-based groups, using seasonal data spanning 22 seasons (2000–01 to 2021–22).
+
+## Objectives
+
+1. **Classify** professional football teams into distinct performance-based groups using unsupervised machine learning techniques (K-Means clustering) based on match outcomes and goal-related indicators — wins, draws, losses, goals scored, goals conceded, and goal difference.
+
+2. **Examine** differences in league points accumulation across the identified performance groups using descriptive statistics (mean and standard deviation) and inferential statistical tests to determine whether observed differences are statistically significant.
+
+3. **Assess** the relationship between performance-based groupings and points accumulation by applying Pearson correlation analysis.
+
+4. **Examine** the effect of performance-based classifications on variations in league outcomes using multiple regression analysis, incorporating relevant control variables to improve the robustness and validity of the model.
+
+## Summary of Findings
+
+K-Means clustering classified 44 EPL clubs into three statistically validated performance tiers — **Elite**, **Mid-Table**, and **Struggling** — based on average seasonal wins, draws, losses, goals scored, and goals conceded. Assumption testing preceded clustering, including Mahalanobis distance for outlier detection, correlation analysis to address multicollinearity, and the Hopkins statistic to confirm genuine clustering tendency. The optimal number of clusters (k = 3) was determined via the elbow method and silhouette analysis.
+
+A one-way ANOVA confirmed statistically significant differences in points accumulation across clusters (F(2,41) = 113.00, p < 0.001, η² = 0.85), with Tukey HSD post-hoc tests validating all pairwise comparisons. A Pearson correlation revealed a strong negative relationship (r = −0.868, p < 0.001) between cluster ranking and points accumulation, with cluster membership explaining 75.3% of points variation at the bivariate level.
+
+Multiple regression assessed how performance classifications, alongside control variables (goals scored, goals conceded, seasons played), explain variation in league outcomes. The simple model (cluster only) achieved R² = 0.846, while the full model achieved **R² = 0.982**, confirming exceptional explanatory power and validating the robustness of the performance-based classification framework.
+
+## Techniques Used
+
+K-Means clustering, Principal Component Analysis (PCA), one-way ANOVA, Tukey HSD post-hoc testing, Pearson correlation, multiple linear regression, and comprehensive assumption testing (Shapiro-Wilk normality, Breusch-Pagan homoscedasticity, Durbin-Watson autocorrelation, Mahalanobis outlier detection).
+
+## Tools
+
+R (tidyverse, cluster, factoextra, ggplot2, car, lmtest), with Word document report generation via Node.js.
